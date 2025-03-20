@@ -1,3 +1,4 @@
+#ifndef STACK_H
 #define STACK_H
 #include "stack.h"
 #include "linked.h"
@@ -8,7 +9,11 @@ void initStack(address* p) {
 	Create_Node(p);
 }
 
-int isEmptyStack(address* p) {
+void isiNodeStack(address* p, infotype value) {
+	Isi_Node(p, value);
+}
+
+int isEmptyStack(address p) {
 	isEmpty(p);
 }
 
@@ -31,14 +36,14 @@ void decimalToBinary(infotype num, address* p) {
 	while(num > 0){
 		if(num != 1){
 			Sisa = num % 2;
-			CreateNodeStack(&s);
-			IsiNodeStack(&s, Sisa);
+			initStack(&s);
+			isiNodeStack(&s, Sisa);
 			push(p, s);
 			num = num/2;
 		} else {
 			Sisa = num % 2;
-			CreateNodeStack(&s);
-			IsiNodeStack(&s, Sisa);
+			initStack(&s);
+			isiNodeStack(&s, Sisa);
 			push(p, s);
 			num--;
 		}
@@ -58,3 +63,5 @@ void printBinary(address* p) {
 		printf("%d", X);
 	}
 }
+
+#endif

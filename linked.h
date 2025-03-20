@@ -1,3 +1,4 @@
+
 /* File        : linked.h */
 /* Deskripsi   : ADT linked list dengan representasi fisik pointer */
 /*		 Representasi address dengan pointer */
@@ -20,10 +21,12 @@ int isEmpty(address p);
 // Tujuan : memeriksa apakah linked masih kosong
 // Linked list kosong , jika Head == NULL
 
+
 void Create_Node (address *p);
 // Tujuan : memesan memory dengan alokasi dinamis
 // Jika berhasil mengirimkan address, dan jika gagal mengirimkan NULL
 // Parameter : P (parameter Output)
+
 
 void Isi_Node (address *p , infotype nilai);
 // Tujuan : Mengisi node yang sudah dipesan dengan Nilai yang dikirimkan
@@ -31,9 +34,11 @@ void Isi_Node (address *p , infotype nilai);
 //				*p.next diisi NULL
 // Parameter : P (parameter Input-Output); Nilai (parameter Input)
 
+
 void Tampil_List (address p);
 // Tujuan : Menampilkan seluruh isi Linked List
 // Parameter : p (parameter input)
+
 
 void Ins_Awal (address *p, address PNew);
 // Tujuan : Insert 1 node baru (PNew) di awal Linked List
@@ -45,11 +50,13 @@ void Ins_Akhir (address *p, address PNew);
 /* IS : p mungkin Kosong */
 /* FS : menyambungkan elemen baru (PNew) di akhir Linked List */
 
+
 address Search (address p, infotype nilai);
 /* Mencari apakah ada elemen list dengan Info(P) = nilai */
 /* Jika ada, mengirimkan address elemen tsb. */
 /* Jika tidak ada, mengirimkan Nil */
 /* Menggunakan variabel bertype boolean */
+
 
 void InsertAfter (address * pBef, address PNew);
 /* Tujuan : Menyambungkan 1 Node baru(PNew) stlah node tertentu(PBef) */
@@ -57,10 +64,12 @@ void InsertAfter (address * pBef, address PNew);
 /* FS : Insert PNew sebagai elemen sesudah PBef */
 /* Asumsi : pBef adalah posisi insert */
 
+
 void Del_Awal (address * p, infotype * X);
 /* IS : P TIDAK Kosong */
 /* FS : Elemen pertama List dihapus, nilai info disimpan ke X */
 /* 	dan alamat elemen pertama di dealokasi */
+
 
 void Del_Akhir (address * p, infotype * X);
 /* IS : P TIDAK Kosong */
@@ -88,10 +97,18 @@ infotype Min (address p);
 infotype Rerata (address p);
 /* Mengirimkan nilai rata-rata Info(P) */
 
+
 address BalikList (address p);
 /* IS : p sembarang */
 /* FS : Elemen List dibalik : elemen terakhir menjadi elemen pertama, dst */
 
+void Destroy_All(address *p);
+
+void Modify_First(address *p, infotype *X);
+
+void Modify_Between(address *p, infotype *X, int position);
+
+void Modify_Last(address *p, infotype *X);
 
 #endif
 
